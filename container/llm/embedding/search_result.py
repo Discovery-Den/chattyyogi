@@ -10,7 +10,7 @@ import os
 from qdrant_client.http.models import models
 
 os.environ['QDRANT_HOST'] = "https://3c78a67b-1cdb-4b5a-9944-1e27ce171122.us-east4-0.gcp.cloud.qdrant.io"
-os.environ['QDRANT_API_KEY'] = "xIGGbFa5TeFS2IfEKyYRB9PlZufyPj2rY5dvS4t18HVGZIYsVqzNlQ"
+os.environ['QDRANT_API_KEY'] = ""
 os.environ['QDRANT_COLLECTION'] = "yntc_material"
 os.environ['PORT'] = '6334'
 
@@ -61,7 +61,7 @@ prompt = PromptTemplate(
 )
 
 repo_id = "meta-llama/Meta-Llama-3-8B"
-os.environ['HF_API_KEY'] = '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'
+os.environ['HF_API_KEY'] = ''
 
 llm = HuggingFaceEndpoint(
     repo_id=repo_id,
