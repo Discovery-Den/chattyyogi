@@ -1,0 +1,11 @@
+langchain-community
+langchain
+langchain-qdrant
+qdrant-client
+pymupdf
+rapidocr-onnxruntime
+pypdf
+fastembed
+torch
+transformers
+langchain-huggingface
