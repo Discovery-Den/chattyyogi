@@ -1,12 +1,10 @@
+import os
+
+from dotenv import load_dotenv
 from langchain.chains.llm import LLMChain
-from langchain.chains.retrieval_qa.base import RetrievalQA
-from langchain_community.embeddings import FastEmbedEmbeddings
-from langchain_huggingface import HuggingFaceEndpoint
 from langchain_community.llms.huggingface_endpoint import HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate
 from qdrant_client import QdrantClient
-import os
-from dotenv import load_dotenv
 
 load_dotenv(dotenv_path="../../../dev.env")
 

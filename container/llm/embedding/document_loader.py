@@ -1,10 +1,9 @@
-from langchain_community.document_loaders import PyMuPDFLoader
-from langchain_community.embeddings import FastEmbedEmbeddings
-from langchain_text_splitters import CharacterTextSplitter
-from qdrant_client import QdrantClient
+import os
 
 from dotenv import load_dotenv
-import os
+from langchain_community.document_loaders import PyMuPDFLoader
+from langchain_text_splitters import CharacterTextSplitter
+from qdrant_client import QdrantClient
 
 load_dotenv(dotenv_path="../../../dev.env")
 

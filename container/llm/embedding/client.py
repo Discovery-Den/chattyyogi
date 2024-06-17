@@ -1,7 +1,8 @@
+import os
+
+from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
-from dotenv import load_dotenv
-import os
 
 load_dotenv(dotenv_path="../../../dev.env")
 
