@@ -6,13 +6,9 @@ from langchain_community.llms.huggingface_endpoint import HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate
 from qdrant_client import QdrantClient
 import os
+from dotenv import load_dotenv
 
-from qdrant_client.http.models import models
-
-os.environ['QDRANT_HOST'] = "https://3c78a67b-1cdb-4b5a-9944-1e27ce171122.us-east4-0.gcp.cloud.qdrant.io"
-os.environ['QDRANT_API_KEY'] = ""
-os.environ['QDRANT_COLLECTION'] = "yntc_material"
-os.environ['PORT'] = '6334'
+load_dotenv(dotenv_path="../../../dev.env")
 
 client = QdrantClient(
     url=os.getenv("QDRANT_HOST"),
@@ -29,7 +25,7 @@ client = QdrantClient(
 # search_result = retriever.invoke("List of yoga asana for lung related issue")
 # search_result = qdrant.similarity_search("List of yoga asana for lung related issue")
 
-search_result =client.query(
+search_result = client.query(
     collection_name=os.getenv('QDRANT_COLLECTION'),
     query_text="List of yoga asana for lung related issue",
     limit=10
@@ -61,7 +57,6 @@ prompt = PromptTemplate(
 )
 
 repo_id = "meta-llama/Meta-Llama-3-8B"
-os.environ['HF_API_KEY'] = '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'
 
 llm = HuggingFaceEndpoint(
     repo_id=repo_id,
