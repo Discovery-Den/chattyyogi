@@ -4,14 +4,18 @@ import traceback
 import streamlit as st
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
-from streamlit_chat import message
 
-from embedding.prepare_response import generate_answer
+from embedding.prepare_response import generate_answer, message_func
+
+st.set_page_config(
+    page_title="Chatty Yogi",
+    page_icon="🧘",
+    layout="centered",
+    initial_sidebar_state="auto",
+)
 
 st.title("🧘 Chatty Yogi 🧘🏻‍♂️")
 st.caption("Talk to Chatty Yogi and know all about YNTC Course.")
-
-question = st.text_input("Ask Chatty Yogi a question:")
 
 st.session_state.history = []
 
@@ -36,6 +40,8 @@ def get_similar_content(input_query: str = None):
         return None
 
 
+question = st.text_input("Ask Chatty Yogi a question:")
+
 if question:
     context = get_similar_content(question)
     answer = generate_answer(context, question)
@@ -44,6 +50,5 @@ if question:
 # Display chat history
 for i, entry in enumerate(st.session_state.history):
     is_user = i % 2 == 0
-    avatar_style = "user" if is_user else "chatbot"
-    message(entry['question'], is_user=True, key=str(i) + '_user', avatar_style="open-peeps")
-    message(entry['answer'], is_user=False, key=str(i) + '_bot', avatar_style="bottts")
+    message_func(entry['question'], is_user=False)
+    message_func(entry['answer'], is_user=True)
