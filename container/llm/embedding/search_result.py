@@ -61,7 +61,7 @@ prompt = PromptTemplate(
 )
 
 repo_id = "meta-llama/Meta-Llama-3-8B"
-os.environ['HF_API_KEY'] = ''
+os.environ['HF_API_KEY'] = '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'
 
 llm = HuggingFaceEndpoint(
     repo_id=repo_id,

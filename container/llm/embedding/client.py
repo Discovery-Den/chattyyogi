@@ -1,17 +1,14 @@
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
-
+from dotenv import load_dotenv
 import os
 
-os.environ['QDRANT_HOST'] = "https://3c78a67b-1cdb-4b5a-9944-1e27ce171122.us-east4-0.gcp.cloud.qdrant.io"
-os.environ['QDRANT_API_KEY'] = ""
-os.environ['QDRANT_COLLECTION'] = "yntc_material"
-os.environ['PORT'] = '6334'
+load_dotenv(dotenv_path="../../../dev.env")
 
 
 def create_collection():
     """
-    Create Chatti Yogi Collection with hybrid configuration
+    Create Chatty Yogi Collection with hybrid configuration
     :return: custom collection with hybrid collection
     """
 
