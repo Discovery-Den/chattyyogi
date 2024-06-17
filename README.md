@@ -7,8 +7,19 @@ By utilizing Qdrant's free tier, the solution benefits from a robust infrastruct
 
 For generating the answers, the Hugging Face free Inference API was employed. Hugging Face is a leader in the field of natural language processing (NLP) and offers a wide range of state-of-the-art models for various NLP tasks. Their Inference API provides access to powerful language models, enabling the generation of accurate and contextually appropriate responses. The Hugging Face platform supports a collaborative ecosystem where developers and researchers can share and improve machine learning models, ensuring continuous enhancement and up-to-date solutions.
 
-The LLaMA (Large Language Model Meta AI) text generation model was utilized within this framework. LLaMA is known for its high performance in generating human-like text by understanding and processing natural language at an advanced level. This model enhances the system’s ability to provide detailed and nuanced answers based on the input queries and the underlying data from the yoga textbooks. LLaMA's architecture allows for deep comprehension and coherent text generation, which is critical for delivering quality responses in the knowledge base.
-
 The user interface was designed using Streamlit, a powerful framework for creating interactive web applications. Streamlit ensures that the information is presented in a clear, accessible, and user-friendly manner, enhancing the overall user experience.
 
 Overall, this comprehensive solution integrates advanced machine learning techniques with high-quality data sources and user-friendly presentation tools to provide a reliable and efficient platform for addressing yoga-related inquiries. The incorporation of Qdrant’s vector database not only enhances the retrieval process but also ensures that the system remains scalable and performant as it grows. Hugging Face and the LLaMA model contribute to the precision and relevance of the generated answers, making this knowledge base a robust tool for users seeking information on yoga.
+
+Below few screenshot of application 
+
+## Welcome Page, Who are you?
+!["Welcome Page, Who are you?"](container/llm/resource/img/img_1.png)
+
+## Recommend Asanas
+
+!["Recommend Asanas?"](container/llm/resource/img/img_2.png)
+
+## Error Handling
+
+!["Error Handling"](container/llm/resource/img/img.png)
