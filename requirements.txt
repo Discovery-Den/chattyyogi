@@ -1,6 +1,5 @@
 langchain-community
 langchain
-langchain-qdrant
 qdrant-client
 pymupdf
 rapidocr-onnxruntime
@@ -10,3 +9,5 @@ torch
 transformers
 langchain-huggingface
 python-dotenv
+streamlit
+streamlit-chat

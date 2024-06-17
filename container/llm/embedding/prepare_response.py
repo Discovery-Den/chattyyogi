@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from langchain.chains.llm import LLMChain
 from langchain_core.prompts import PromptTemplate
 from langchain_huggingface import HuggingFaceEndpoint
-from qdrant_client import QdrantClient
+from qdrant_client.fastembed_common import QueryResponse
 
 load_dotenv(dotenv_path="../../../dev.env")
 
@@ -31,35 +31,20 @@ prompt = PromptTemplate(
 )
 
 
-def get_similar_content(input_query: str = None):
-    client = QdrantClient(
-        url=os.getenv("QDRANT_HOST"),
-        api_key=os.getenv("QDRANT_API_KEY"),
-        grpc_port=6334,
-        prefer_grpc=True
-    )
-    search_result = client.query(
-        collection_name=os.getenv('QDRANT_COLLECTION'),
-        query_text=input_query,
-        limit=10
-    )
-    client.close()
-    return search_result
-
-
-def generate_answer(query: str = None):
+def generate_answer(context: list[QueryResponse] = None, query: str = None):
     llm = HuggingFaceEndpoint(
         repo_id=repo_id,
-        max_length=512,
+        max_new_tokens=512,
         temperature=0.25,
         huggingfacehub_api_token=os.getenv('HUGGINGFACEHUB_API_TOKEN'),
     )
     chain = LLMChain(llm=llm, prompt=prompt)
-    answer = chain({"context": get_similar_content(query), "question": query})
+    answer = chain({"context": context, "question": query})
     # Print the summary
     print("Question:", answer['question'])
     print("Answer:", answer['text'])
 
+    return answer
 
-generate_answer(query="Explain Yogic Counselling?")
-generate_answer(query="List me 5 asanas which is beneficial for lung related issues?")
+
+
