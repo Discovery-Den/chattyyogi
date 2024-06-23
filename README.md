@@ -32,10 +32,10 @@ Next, split the loaded documents into manageable chunks. This helps in better in
 - Setting a maximum chunk size to ensure each chunk is of an appropriate length for embedding.
 - Collecting all the chunks into a list for the next processing step.
 
-### 3. Use FastEmbedding for Embedding and Store in Vector DB
+### 3. Use FastEmbed for Embedding and Store in Vector DB
 Finally, convert the text chunks into embeddings using FastEmbedding, and store them in the vector database (Qdrant). This step involves:
 
-- Initializing the FastEmbedding model to encode the text chunks into vector representations.
+- Initializing the FastEmbed model to encode the text chunks into vector representations.
 - Generating embeddings for each chunk, ensuring they accurately represent the content.
 - Initializing the Qdrant client and creating a new collection to store the embeddings.
 - Storing the embeddings in the Qdrant vector database with appropriate metadata to facilitate efficient retrieval.
