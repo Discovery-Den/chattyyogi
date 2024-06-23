@@ -1,5 +1,5 @@
 # chattyyogi
-"A specialized custom Language Learning Model (LLM) knowledge base was meticulously developed to answer yoga-related questions. This innovative solution leverages entirely free, open-source APIs and frameworks, ensuring cost-effectiveness and accessibility. The knowledge base generates answers exclusively from a curated collection of yoga textbooks that have been meticulously inputted into the system, ensuring that the information is both accurate and authoritative.
+A specialized custom Language Learning Model (LLM) knowledge base was meticulously developed to answer yoga-related questions. This innovative solution leverages entirely free, open-source APIs and frameworks, ensuring cost-effectiveness and accessibility. The knowledge base generates answers exclusively from a curated collection of yoga textbooks that have been meticulously inputted into the system, ensuring that the information is both accurate and authoritative.
 
 ## High-Level Design Overview
 - ChattiYogi uses Qdrant (free tier) to build a robust knowledge base.
