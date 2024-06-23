@@ -15,7 +15,7 @@ A specialized custom Language Learning Model (LLM) knowledge base was meticulous
 
 
 ## System Design for Indexing, Retrival and Generation
-![RAG Design](container/llm/resource/img/ChattyYogi_RAG_LLM_Design1.png)
+![RAG Design](container/llm/resource/img/ChattyYogi_RAG_LLM_Design.png)
 
 ## Steps for Vector DB Indexing
 
