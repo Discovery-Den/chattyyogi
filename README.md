@@ -52,7 +52,7 @@ Finally, convert the text chunks into embeddings using FastEmbedding, and store 
     - Store the chunks in a list for the embedding process.
 
 3. **Embedding and Storing**:
-    - Initialize the FastEmbedding model with the appropriate parameters.
+    - Initialize the FastEmbedding model with the parameters.
     - Generate embeddings for each chunk.
     - Initialize the Qdrant client and create a collection if it doesn’t exist.
     - Upsert the embeddings into the Qdrant vector database with associated metadata such as chunk content and identifiers.
